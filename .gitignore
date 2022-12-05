@@ -1,0 +1,14 @@
+.idea
+.vagrant
+.vscode
+.fleet
+target
+.target
+.DS_store
+.local
+.bin
+.build
+dist
+result
+result-bin
+*.log

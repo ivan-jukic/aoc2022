@@ -1,0 +1,12 @@
+[build]
+target-dir = ".build"
+
+[alias]
+rb = "run --release --bin"
+tb = "test --bin"
+
+[profile.release]
+strip = true        # Automatically strip symbols from the binary.
+opt-level = "z"     # Optimize for size.
+lto = true          # Link time optimization.
+codegen-units = 1   # Allow for maximum size reduction optimizations.
