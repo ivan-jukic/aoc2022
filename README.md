@@ -4,7 +4,7 @@ Here we go again, into the madness!
 
 ## Running the code
 
-To run the code this repo depends on `Nix` to set up the environment. It provides the binaries required for building and running solutions.
+To run the code this repo depends on `Nix` to set up the environment. It provides the binaries required for building and running the solutions.
 
 Repo can handle dev shell via flakes `nix develop` or the standard `nix-shell` commands.
 
