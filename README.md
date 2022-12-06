@@ -14,7 +14,7 @@ There's also a simple way to test and the code. `.cargo/config.toml` defines a c
 cargo tb dayXY
 ```
 
-And to run the _release_ version of the code:
+Where `XY` is the number of the day, zero prefixed for values less than 10; e.g. 01, 02, 03 ... 24, 25. And to run the _release_ version of the code:
 
 ```bash
 cargo rb dayXY
