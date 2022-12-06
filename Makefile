@@ -1,3 +1,3 @@
-.PHONY: add
-add:
+.PHONY: day
+day:
 	./bin/new.sh
