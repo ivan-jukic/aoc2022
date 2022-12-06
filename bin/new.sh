@@ -25,8 +25,24 @@ touch src/$new_day/input_test
 
 # Add default code
 cat > src/$new_day/$new_day.rs <<EOF
+use extras::{files, logging};
+
 fn main() {
-    println!("TO IMPLEMENT >> $new_day")
+    let input = "src/$new_day/input";
+
+    let pt1 = pt1_solution(input);
+    let pt2 = pt2_solution(input);
+
+    println!("$new_day: Pt1 = {}", pt1);
+    println!("$new_day: Pt2 = {}", pt2);
+}
+
+fn pt1_solution(filename: &str) -> u32 {
+    0
+}
+
+fn pt2_solution(filename: &str) -> u32 {
+    0
 }
 
 
@@ -38,13 +54,15 @@ fn main() {
 mod test {
 
     #[test]
-    fn pt1_solution() {
-        assert!(true);
+    fn test_pt1_solution() {
+        let answer = super::pt1_solution("src/$new_day/input_test");
+        assert_eq!(answer, 0);
     }
 
     #[test]
-    fn pt2_solution() {
-        assert!(true);
+    fn test_pt2_solution() {
+        let answer = super::pt2_solution("src/$new_day/input_test");
+        assert_eq!(answer, 0);
     }
 }
 EOF
