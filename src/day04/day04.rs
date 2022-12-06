@@ -79,7 +79,7 @@ fn range_decoder(line: String) -> Option<(Range, Range)> {
 mod test {
 
     #[test]
-    fn test_pt1_decoder() {
+    fn test_range_decoder() {
         let answer = super::range_decoder("1-21,56-103".to_string());
         assert_eq!(answer, Some(((1, 21), (56, 103))));
     }
