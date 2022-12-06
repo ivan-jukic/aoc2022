@@ -25,7 +25,7 @@ touch src/$new_day/input_test
 
 # Add default code
 cat > src/$new_day/$new_day.rs <<EOF
-use extras::{files, logging};
+use extras::files;
 
 fn main() {
     let input = "src/$new_day/input";
@@ -38,10 +38,12 @@ fn main() {
 }
 
 fn pt1_solution(filename: &str) -> u32 {
+    let _data: Vec<String> = files::read_into_vec_of(filename, |line| Some(line));
     0
 }
 
 fn pt2_solution(filename: &str) -> u32 {
+    let _data: Vec<String> = files::read_into_vec_of(filename, |line| Some(line));
     0
 }
 
