@@ -13,10 +13,8 @@ let
 in
 {
     devShell = pkgs.mkShellNoCC {
-        PATH                = "${rustfmtNightly}/bin:$PATH"; # Use the nightly `rustfmt`!
         RUST_SRC_PATH       = "${rustSrc}/lib/rustlib/src/rust/library";   # Fixes rust-analyzer!
         PROJECT_PLATFORM    = system;
-
         nativeBuildInputs = with pkgs; [
             rust-bin.stable.${rustVer}.default
             # Using nightly rustfmt to allow unstable features!
@@ -37,6 +35,7 @@ in
             ++ linuxSpecificTools;
 
         shellHook = ''
+            PATH = "${rustfmtNightly}/bin:$PATH"; # Use the nightly `rustfmt`!
             clear
             figlet "AOC 2022" | lolcat --freq 0.5
         '';

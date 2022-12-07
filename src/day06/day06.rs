@@ -23,8 +23,8 @@ fn pt2_solution(filename: &str) -> u32 {
 fn calc_marker_offset(buff: String) -> u32 {
     buff.chars()
         .into_iter()
-        .fold((0, vec![]), |(cnt, prev), c| -> (u32, Vec<char>) {
-            // ...
+        .fold((0, vec![]), |(cnt, mut prev), chr| -> (u32, Vec<char>) {
+            prev.push(chr);
             (cnt, prev)
         })
         .0
