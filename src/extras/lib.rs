@@ -39,7 +39,6 @@ pub mod files {
     }
 }
 
-
 ///
 /// Logging related extras
 pub mod logging {
@@ -53,7 +52,6 @@ pub mod logging {
         err.to_string()
     }
 }
-
 
 ///
 /// String related extras
@@ -72,6 +70,19 @@ pub mod strings {
             let (left, other) = source.split_at(n);
             new_res.push(left.to_string());
             take_every_n(n, other, new_res)
+        }
+    }
+}
+
+///
+/// Vec related extras
+pub mod vec {
+    pub fn uncons(vals: Vec<String>) -> Option<(String, Vec<String>)> {
+        let mfst = vals.get(0);
+        match (mfst, vals.len()) {
+            (Some(fst), 1) => Some((fst.to_string(), vec![])),
+            (Some(fst), _) => Some((fst.to_string(), vals[1..].to_vec())),
+            _ => None,
         }
     }
 }
