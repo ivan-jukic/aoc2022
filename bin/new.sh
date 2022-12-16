@@ -28,25 +28,26 @@ cat > src/$new_day/$new_day.rs <<EOF
 use extras::files;
 
 fn main() {
-    let input = "src/$new_day/input";
+    let data = decode("src/$new_day/input");
 
-    let pt1 = pt1_solution(input);
-    let pt2 = pt2_solution(input);
+    let pt1 = pt1_solution(&data);
+    let pt2 = pt2_solution(&data);
 
     println!("$new_day: Pt1 = {}", pt1);
     println!("$new_day: Pt2 = {}", pt2);
 }
 
-fn pt1_solution(filename: &str) -> u32 {
-    let _data: Vec<String> = files::read_into_vec_of(filename, |line| Some(line));
+fn pt1_solution(_data: &Vec<String>) -> u32 {
     0
 }
 
-fn pt2_solution(filename: &str) -> u32 {
-    let _data: Vec<String> = files::read_into_vec_of(filename, |line| Some(line));
+fn pt2_solution(_data: &Vec<String>) -> u32 {
     0
 }
 
+fn decode(filename: &str) -> Vec<String> {
+    files::read_into_vec_of(filename, |line| Some(line))
+}
 
 ///
 /// Tests
@@ -57,13 +58,15 @@ mod test {
 
     #[test]
     fn test_pt1_solution() {
-        let answer = super::pt1_solution("src/$new_day/input_test");
+        let data = decode("src/$new_day/input_test");
+        let answer = super::pt1_solution(&data);
         assert_eq!(answer, 0);
     }
 
     #[test]
     fn test_pt2_solution() {
-        let answer = super::pt2_solution("src/$new_day/input_test");
+        let data = decode("src/$new_day/input_test");
+        let answer = super::pt2_solution(&data);
         assert_eq!(answer, 0);
     }
 }
