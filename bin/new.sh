@@ -6,7 +6,7 @@ max_day=1
 for entry in "$src_dir"/*; do
     day_no="${entry: -2}"
     if [[ $day_no =~ $re ]]; then
-        day=$((day_no+1))
+        day=$((10#$day_no+1)) # Force base 10 interpretation with `10#$`
         if [[ $day -gt $max_day ]]; then
             max_day=$day
         fi
@@ -55,6 +55,7 @@ fn decode(filename: &str) -> Vec<String> {
 
 #[cfg(test)]
 mod test {
+    use super::decode;
 
     #[test]
     fn test_pt1_solution() {
@@ -79,3 +80,5 @@ cat >> Cargo.toml <<EOF
 name = "$new_day"
 path = "src/$new_day/$new_day.rs"
 EOF
+
+echo "Added new day solution setup: $new_day"
